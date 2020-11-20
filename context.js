@@ -5,6 +5,7 @@ const Context = React.createContext();
 
 function UseContextProvider(props) {
     const [allSongs, setAllSongs] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
         setAllSongs(SongsData)
@@ -53,7 +54,13 @@ function UseContextProvider(props) {
         setAllSongs(newSongsArray);
     }
 
-    return <Context.Provider value={{allSongs, toggleFavorite, incrementVotes, decrementVotes}}>
+
+    // Add to cart 
+    function addToCart(song) {
+        setCartItems(prevItems => [...cartItems, song]);
+    }
+ 
+    return <Context.Provider value={{allSongs, toggleFavorite, incrementVotes, decrementVotes, addToCart, cartItems}}>
         {props.children}
     </Context.Provider>
 }

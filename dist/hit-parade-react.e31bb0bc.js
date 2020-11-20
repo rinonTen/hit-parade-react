@@ -33927,6 +33927,14 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -33954,6 +33962,11 @@ function UseContextProvider(props) {
       _useState2 = _slicedToArray(_useState, 2),
       allSongs = _useState2[0],
       setAllSongs = _useState2[1];
+
+  var _useState3 = (0, _react.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      cartItems = _useState4[0],
+      setCartItems = _useState4[1];
 
   (0, _react.useEffect)(function () {
     setAllSongs(_HitParadeData.default);
@@ -33997,6 +34010,13 @@ function UseContextProvider(props) {
       return _objectSpread({}, song);
     });
     setAllSongs(newSongsArray);
+  } // Add to cart 
+
+
+  function addToCart(song) {
+    setCartItems(function (prevItems) {
+      return [].concat(_toConsumableArray(cartItems), [song]);
+    });
   }
 
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
@@ -34004,7 +34024,9 @@ function UseContextProvider(props) {
       allSongs: allSongs,
       toggleFavorite: toggleFavorite,
       incrementVotes: incrementVotes,
-      decrementVotes: decrementVotes
+      decrementVotes: decrementVotes,
+      addToCart: addToCart,
+      cartItems: cartItems
     }
   }, props.children);
 }
@@ -34098,7 +34120,8 @@ function SongsComponent(_ref) {
   var _useContext = (0, _react.useContext)(_context.Context),
       toggleFavorite = _useContext.toggleFavorite,
       incrementVotes = _useContext.incrementVotes,
-      decrementVotes = _useContext.decrementVotes;
+      decrementVotes = _useContext.decrementVotes,
+      addToCart = _useContext.addToCart;
 
   var favoritedIcon = song.isFavorited ? _favorite_fill.default : _favorite_border.default;
   return /*#__PURE__*/_react.default.createElement("article", {
@@ -34136,6 +34159,9 @@ function SongsComponent(_ref) {
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/cart"
   }, /*#__PURE__*/_react.default.createElement("img", {
+    onClick: function onClick() {
+      return addToCart(song);
+    },
     src: _cart.default,
     alt: "image of a cart"
   }))), /*#__PURE__*/_react.default.createElement("div", {
@@ -34179,7 +34205,76 @@ function Songs() {
 
 var _default = Songs;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../context":"context.js","../Components/SongsComponent":"Components/SongsComponent.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../context":"context.js","../Components/SongsComponent":"Components/SongsComponent.js"}],"Components/CartItems.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = CartItems;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function CartItems(_ref) {
+  var song = _ref.song;
+  return /*#__PURE__*/_react.default.createElement("article", {
+    className: "songs--container"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: "",
+    alt: "trash-icon"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "songs-description"
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "artist-name"
+  }, song.title), /*#__PURE__*/_react.default.createElement("p", {
+    className: "artist-name"
+  }, song.artist)), /*#__PURE__*/_react.default.createElement("div", {
+    className: "upvotes-container"
+  }, /*#__PURE__*/_react.default.createElement("p", null, "1000")));
+}
+},{"react":"node_modules/react/index.js"}],"Pages/Cart.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Cart;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _context = require("../context");
+
+var _CartItems = _interopRequireDefault(require("../Components/CartItems"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function Cart() {
+  var _useContext = (0, _react.useContext)(_context.Context),
+      cartItems = _useContext.cartItems;
+
+  var cartItemsElement = cartItems.map(function (item) {
+    return /*#__PURE__*/_react.default.createElement(_CartItems.default, {
+      key: item.id,
+      song: item
+    });
+  });
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "cart--container"
+  }, cartItemsElement, /*#__PURE__*/_react.default.createElement("div", {
+    className: "order-song"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "order-btn"
+  }, "Buy"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "total-price"
+  })));
+}
+},{"react":"node_modules/react/index.js","../context":"context.js","../Components/CartItems":"Components/CartItems.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34195,6 +34290,8 @@ var _Header = _interopRequireDefault(require("./Components/Header"));
 
 var _Songs = _interopRequireDefault(require("./Pages/Songs"));
 
+var _Cart = _interopRequireDefault(require("./Pages/Cart"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
@@ -34203,9 +34300,9 @@ function App() {
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_Songs.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/cart"
-  }))));
+  }, /*#__PURE__*/_react.default.createElement(_Cart.default, null)))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Components/Header":"Components/Header.js","./Pages/Songs":"Pages/Songs.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Components/Header":"Components/Header.js","./Pages/Songs":"Pages/Songs.js","./Pages/Cart":"Pages/Cart.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

@@ -9,8 +9,8 @@ import cart from '../images/cart.svg';
 
 
 export default function SongsComponent({song}) {
-    const { toggleFavorite, incrementVotes, decrementVotes } = useContext(Context); 
-    
+    const { toggleFavorite, incrementVotes, decrementVotes, addToCart } = useContext(Context); 
+     
     const favoritedIcon = song.isFavorited ? favoriteIconFill : favoriteIconBorder;
 
     return (
@@ -30,7 +30,7 @@ export default function SongsComponent({song}) {
             </div>
             <div className="add-cart">
                 <Link to="/cart">
-                <img src={cart} alt="image of a cart"/>
+                <img onClick={() => addToCart(song)} src={cart} alt="image of a cart"/>
                 </Link>
             </div>
             <div className="song-lyrics">
