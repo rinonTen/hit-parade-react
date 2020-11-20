@@ -9,7 +9,7 @@ export default function CartItems({song}) {
                 <p className="artist-name">{song.artist}</p>
             </div>
             <div className="upvotes-container">
-                <p>1000</p>
+                <p>{song.price}</p>
             </div>
         </article>
     )
