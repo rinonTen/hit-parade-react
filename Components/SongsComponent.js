@@ -6,13 +6,18 @@ import favoriteIconFill from '../images/favorite_fill.svg';
 import arrowUpward from '../images/arrow_upward.svg';
 import arrowDownward from '../images/arrow_downward.svg';
 import cart from '../images/cart.svg';
-
+import cartFilled from '../images/cart_filled.svg';
 
 export default function SongsComponent({song}) {
-    const { toggleFavorite, incrementVotes, decrementVotes, addToCart } = useContext(Context); 
-     
+    const { toggleFavorite, toggleCart, incrementVotes, decrementVotes, addToCart, showLyrics} = useContext(Context); 
+ 
+    const handleCart = (obj, id) => {
+        addToCart(obj);
+        toggleCart(id)
+    }
     const favoritedIcon = song.isFavorited ? favoriteIconFill : favoriteIconBorder;
-
+    const cartIconSource = song.alreadyBought ? cartFilled : cart ;
+ 
     return (
         <article className="songs--container">
             <img onClick={() => toggleFavorite(song.id)} src={favoritedIcon} alt="heart-icon"/>
@@ -29,12 +34,10 @@ export default function SongsComponent({song}) {
                 <img onClick={() => decrementVotes(song.id)} src={arrowDownward} alt="image of down arrow"/>
             </div>
             <div className="add-cart">
-                <Link to="/cart">
-                <img onClick={() => addToCart(song)} src={cart} alt="image of a cart"/>
-                </Link>
+                <img onClick={() =>handleCart(song, song.id)} src={cartIconSource} alt="image of a cart"/>
             </div>
             <div className="song-lyrics">
-                <Link to="/lyrics">
+                <Link onClick={() => showLyrics(song)} to="/lyrics">
                     Lyrics
                 </Link>
             </div>

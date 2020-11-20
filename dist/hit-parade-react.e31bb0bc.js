@@ -33869,6 +33869,7 @@ var songData = [{
   style: "Slow",
   isFavorited: false,
   price: 22000,
+  alreadyBought: false,
   lyrics: "\n            Found love beyond all reason\n            You gave Your life, Your all for me\n            And called me Yours foreverCaught in the mercy fallout\n            I found hope, found life\n            Found all I need\n            'Cause You're all I needThe time has come\n            To stand for all we believe in\n            So I, for one, am gonna\n            Give my praise to YouToday, today, it's all or nothing\n            All the way, the praise goes out to You\n            Yeah, all the praise goes out to You\n        "
 }, {
   id: 2,
@@ -33879,6 +33880,7 @@ var songData = [{
   style: "Pop",
   isFavorited: false,
   price: 12000,
+  alreadyBought: false,
   lyrics: "\n        I was sure by now\n        God, you would have reached down\n        And wiped our tears away\n        Stepped in and saved the day\n        But once again, I say \"Amen,\" and it's still raining\n        \n        As the thunder rolls\n        I barely hear your whisper through the rain\n        \"I'm with you\"\n        And as your mercy falls\n        I raise my hands and praise the God who gives\n        And takes away\n        \n        And I'll praise you in this storm\n        And I will lift my hands\n        For you are who you are\n        No matter where I am\n        \n        And every tear I've cried\n        You hold in your hand\n        You never left my side\n        And though my heart is torn\n        I will praise you in this storm\n        \n        I remember when\n        I stumbled in the wind\n        You heard my cry to you\n        And raised me up again\n        My strength is almost gone\n        How can I carry on\n        If I can't find you\n        \n        But as the thunder rolls\n        I barely hear your whisper through the rain\n        \"I'm with you\"\n        And as your mercy falls\n        I raise my hands and praise the God who gives\n        And takes away\n        \n        And I'll praise you in this storm\n        And I will lift my hands\n        For you are who you are\n        No matter where I am\n        \n        And every tear I've cried\n        You hold in your hand\n        You never left my side\n        And though my heart is torn\n        I will praise you in this storm"
 }, {
   id: 3,
@@ -33889,6 +33891,7 @@ var songData = [{
   style: "Country",
   isFavorited: false,
   price: 32000,
+  alreadyBought: false,
   lyrics: "\n        Winter has come back again\n        Feels like the season won't end\n        My faith is tired tonight\n        And I won't try to pretend\n        I've got it all figured out\n        That I don't have any doubts\n        I've got a busted heart\n        I need You now\n        Yeah I need You now\n        \n        Hold on to me\n        Hold on to me\n        Don't let me lose my way\n        Hold on to me\n        \n        I am the wandering son\n        Enough is never enough\n        I keep chasing the wind\n        Instead of chasing Your love\n        I'm screaming out Your name\n        Don't let me fall on my face\n        I've got a busted heart\n        I'm in need of a change\n        Yeah, I'm desperate for grace"
 }, {
   id: 4,
@@ -33899,6 +33902,7 @@ var songData = [{
   style: "Kilalaka",
   isFavorited: false,
   price: 22800,
+  alreadyBought: false,
   lyrics: "\n        When it comes to being true, at least true to me\n        One thing I've found, one thing I found\n        Oh no, you'll never let me down\n        Get up, I get down, get up, I get down\n        Get up, I get down, get up, I get down\n        Get up, I get down, get up, I get down\n        \n        Jay-Z:\n        Yo, first I snatched the streets, then I snatched the charts\n        First I had their ear, now I have their heart\n        Rappers came and went, I've been here from the start\n        I seen them put it together, watched them take it apart\n        Seen the Rovers roll up with ribbons\n        I seen them re-po'd, re-sold, then re-driven\n        So when I reload, he holds number one position\n        When you hot, I'm hot\n        And when your feet cold, mines is sizzling\n        It's plain to see, niggas can't fuck with me\n        'Cause I'ma be that nigga for life\n        This is not an image, this is God-given\n        This is hard-livin', mixed with Cristal sippin'\n        It's the most consistent, Hov\n        Give you the most hits you can fit inside a whole disc and\n        Nigga I'm home on these charts, y'all niggas visitin'\n        It's Hov tradition, Jeff Gordon of rap\n        I'm back to claim pole position, holla at ya boy"
 }, {
   id: 5,
@@ -33909,6 +33913,7 @@ var songData = [{
   style: "Tsapiky",
   isFavorited: false,
   price: 25000,
+  alreadyBought: false,
   lyrics: "\n        Tsy mampino fa dia tampoka teo Toa manonofy aho nefa indrisy fa lasa tokoa Ho any amin'ny mandrakizay? \n        "
 }];
 var _default = songData;
@@ -33973,6 +33978,11 @@ function UseContextProvider(props) {
       cartItems = _useState4[0],
       setCartItems = _useState4[1];
 
+  var _useState5 = (0, _react.useState)({}),
+      _useState6 = _slicedToArray(_useState5, 2),
+      songLyrics = _useState6[0],
+      setSongLyrics = _useState6[1];
+
   (0, _react.useEffect)(function () {
     setAllSongs(_HitParadeData.default);
   }, []);
@@ -33988,8 +33998,23 @@ function UseContextProvider(props) {
       return _objectSpread({}, song);
     });
     setAllSongs(newSongsArray);
-  } // increment votes
+  } // Toggle cart icon
 
+
+  function toggleCart(idToToggle) {
+    var newSongsArray = allSongs.map(function (song) {
+      if (song.id === idToToggle) {
+        return _objectSpread(_objectSpread({}, song), {}, {
+          alreadyBought: !song.alreadyBought
+        });
+      }
+
+      return _objectSpread({}, song);
+    });
+    setAllSongs(newSongsArray);
+  }
+
+  console.log(allSongs); // increment votes
 
   function incrementVotes(idToIncrement) {
     var newSongsArray = allSongs.map(function (song) {
@@ -34022,6 +34047,20 @@ function UseContextProvider(props) {
     setCartItems(function (prevItems) {
       return [].concat(_toConsumableArray(cartItems), [song]);
     });
+  } // Showing the lyrics
+
+
+  function showLyrics(song) {
+    setSongLyrics(song);
+  } // Delete a song
+
+
+  function removeSong(songId) {
+    setCartItems(function (prevItems) {
+      return prevItems.filter(function (item) {
+        return item.id !== songId;
+      });
+    });
   }
 
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
@@ -34031,7 +34070,11 @@ function UseContextProvider(props) {
       incrementVotes: incrementVotes,
       decrementVotes: decrementVotes,
       addToCart: addToCart,
-      cartItems: cartItems
+      cartItems: cartItems,
+      removeSong: removeSong,
+      showLyrics: showLyrics,
+      songLyrics: songLyrics,
+      toggleCart: toggleCart
     }
   }, props.children);
 }
@@ -34089,6 +34132,8 @@ module.exports = "/arrow_upward.be337f02.svg";
 module.exports = "/arrow_downward.9cf5918c.svg";
 },{}],"images/cart.svg":[function(require,module,exports) {
 module.exports = "/cart.b7d88fbb.svg";
+},{}],"images/cart_filled.svg":[function(require,module,exports) {
+module.exports = "/cart_filled.85d908ad.svg";
 },{}],"Components/SongsComponent.js":[function(require,module,exports) {
 "use strict";
 
@@ -34113,6 +34158,8 @@ var _arrow_downward = _interopRequireDefault(require("../images/arrow_downward.s
 
 var _cart = _interopRequireDefault(require("../images/cart.svg"));
 
+var _cart_filled = _interopRequireDefault(require("../images/cart_filled.svg"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
@@ -34124,11 +34171,19 @@ function SongsComponent(_ref) {
 
   var _useContext = (0, _react.useContext)(_context.Context),
       toggleFavorite = _useContext.toggleFavorite,
+      toggleCart = _useContext.toggleCart,
       incrementVotes = _useContext.incrementVotes,
       decrementVotes = _useContext.decrementVotes,
-      addToCart = _useContext.addToCart;
+      addToCart = _useContext.addToCart,
+      showLyrics = _useContext.showLyrics;
+
+  var handleCart = function handleCart(obj, id) {
+    addToCart(obj);
+    toggleCart(id);
+  };
 
   var favoritedIcon = song.isFavorited ? _favorite_fill.default : _favorite_border.default;
+  var cartIconSource = song.alreadyBought ? _cart_filled.default : _cart.default;
   return /*#__PURE__*/_react.default.createElement("article", {
     className: "songs--container"
   }, /*#__PURE__*/_react.default.createElement("img", {
@@ -34161,21 +34216,22 @@ function SongsComponent(_ref) {
     alt: "image of down arrow"
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "add-cart"
-  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/cart"
   }, /*#__PURE__*/_react.default.createElement("img", {
     onClick: function onClick() {
-      return addToCart(song);
+      return handleCart(song, song.id);
     },
-    src: _cart.default,
+    src: cartIconSource,
     alt: "image of a cart"
-  }))), /*#__PURE__*/_react.default.createElement("div", {
+  })), /*#__PURE__*/_react.default.createElement("div", {
     className: "song-lyrics"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    onClick: function onClick() {
+      return showLyrics(song);
+    },
     to: "/lyrics"
   }, "Lyrics")));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../context":"context.js","../images/favorite_border.svg":"images/favorite_border.svg","../images/favorite_fill.svg":"images/favorite_fill.svg","../images/arrow_upward.svg":"images/arrow_upward.svg","../images/arrow_downward.svg":"images/arrow_downward.svg","../images/cart.svg":"images/cart.svg"}],"Pages/Songs.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../context":"context.js","../images/favorite_border.svg":"images/favorite_border.svg","../images/favorite_fill.svg":"images/favorite_fill.svg","../images/arrow_upward.svg":"images/arrow_upward.svg","../images/arrow_downward.svg":"images/arrow_downward.svg","../images/cart.svg":"images/cart.svg","../images/cart_filled.svg":"images/cart_filled.svg"}],"Pages/Songs.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34223,10 +34279,12 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function CartItems(_ref) {
-  var song = _ref.song;
+  var song = _ref.song,
+      removeSong = _ref.removeSong;
   return /*#__PURE__*/_react.default.createElement("article", {
     className: "songs--container"
   }, /*#__PURE__*/_react.default.createElement("img", {
+    onClick: removeSong,
     src: "",
     alt: "trash-icon"
   }), /*#__PURE__*/_react.default.createElement("div", {
@@ -34261,14 +34319,30 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function Cart() {
   var _useContext = (0, _react.useContext)(_context.Context),
-      cartItems = _useContext.cartItems;
+      cartItems = _useContext.cartItems,
+      _removeSong = _useContext.removeSong;
 
   var cartItemsElement = cartItems.map(function (item) {
     return /*#__PURE__*/_react.default.createElement(_CartItems.default, {
       key: item.id,
+      removeSong: function removeSong() {
+        return _removeSong(item.id);
+      },
       song: item
     });
+  }); // Total price
+
+  var totalPrice = 0;
+  var pricesArr = cartItems.map(function (item) {
+    return item.price;
   });
+
+  if (pricesArr.length > 0) {
+    totalPrice = pricesArr.reduce(function (total, price) {
+      return total + price;
+    });
+  }
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "cart--container"
   }, cartItemsElement, /*#__PURE__*/_react.default.createElement("div", {
@@ -34277,7 +34351,7 @@ function Cart() {
     className: "order-btn"
   }, "Buy"), /*#__PURE__*/_react.default.createElement("p", {
     className: "total-price"
-  })));
+  }, "Total: ", totalPrice)));
 }
 },{"react":"node_modules/react/index.js","../context":"context.js","../Components/CartItems":"Components/CartItems.js"}],"Components/LyricsComponent.js":[function(require,module,exports) {
 "use strict";
@@ -34294,14 +34368,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function LyricsComponent(_ref) {
   var song = _ref.song;
   return /*#__PURE__*/_react.default.createElement("article", {
+    className: "songs-desc"
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", {
+    className: "artist-name"
+  }, song.artist), /*#__PURE__*/_react.default.createElement("span", {
+    className: "artist-name"
+  }, song.title)), /*#__PURE__*/_react.default.createElement("div", {
     className: "lyrics--container"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "songs-description"
-  }, /*#__PURE__*/_react.default.createElement("p", {
-    className: "artist-name"
-  }, song.artist), /*#__PURE__*/_react.default.createElement("p", {
-    className: "artist-name"
-  }, song.title)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "Lyrics"), /*#__PURE__*/_react.default.createElement("p", null, song.lyrics)));
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Lyrics"), /*#__PURE__*/_react.default.createElement("p", null, song.lyrics)));
 }
 },{"react":"node_modules/react/index.js"}],"Pages/Lyrics.js":[function(require,module,exports) {
 "use strict";
@@ -34325,11 +34399,66 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function Lyrics() {
   var _useContext = (0, _react.useContext)(_context.Context),
+      songLyrics = _useContext.songLyrics;
+
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_LyricsComponent.default, {
+    song: songLyrics
+  }));
+}
+},{"react":"node_modules/react/index.js","../context":"context.js","../Components/LyricsComponent":"Components/LyricsComponent.js"}],"Components/StylesComponent.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = StylesComponent;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function StylesComponent(_ref) {
+  var style = _ref.style;
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "style--container"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: "",
+    alt: "headphone image"
+  }), /*#__PURE__*/_react.default.createElement("p", null, style));
+}
+},{"react":"node_modules/react/index.js"}],"Pages/Styles.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Styles;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _context = require("../context");
+
+var _StylesComponent = _interopRequireDefault(require("../Components/StylesComponent"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function Styles() {
+  var _useContext = (0, _react.useContext)(_context.Context),
       allSongs = _useContext.allSongs;
 
-  return /*#__PURE__*/_react.default.createElement("div", null);
+  var styleEl = allSongs.map(function (song) {
+    return /*#__PURE__*/_react.default.createElement(_StylesComponent.default, {
+      key: song.id,
+      style: song.style
+    });
+  });
+  return /*#__PURE__*/_react.default.createElement("div", null, styleEl);
 }
-},{"react":"node_modules/react/index.js","../context":"context.js","../Components/LyricsComponent":"Components/LyricsComponent.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../context":"context.js","../Components/StylesComponent":"Components/StylesComponent.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34349,6 +34478,8 @@ var _Cart = _interopRequireDefault(require("./Pages/Cart"));
 
 var _Lyrics = _interopRequireDefault(require("./Pages/Lyrics"));
 
+var _Styles = _interopRequireDefault(require("./Pages/Styles"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
@@ -34359,9 +34490,11 @@ function App() {
     path: "/cart"
   }, /*#__PURE__*/_react.default.createElement(_Cart.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/lyrics"
-  }, /*#__PURE__*/_react.default.createElement(_Lyrics.default, null)))));
+  }, /*#__PURE__*/_react.default.createElement(_Lyrics.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/styles"
+  }, /*#__PURE__*/_react.default.createElement(_Styles.default, null)))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Components/Header":"Components/Header.js","./Pages/Songs":"Pages/Songs.js","./Pages/Cart":"Pages/Cart.js","./Pages/Lyrics":"Pages/Lyrics.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Components/Header":"Components/Header.js","./Pages/Songs":"Pages/Songs.js","./Pages/Cart":"Pages/Cart.js","./Pages/Lyrics":"Pages/Lyrics.js","./Pages/Styles":"Pages/Styles.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -34405,7 +34538,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57889" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58997" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

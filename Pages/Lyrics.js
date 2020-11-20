@@ -3,11 +3,11 @@ import {Context} from '../context';
 import LyricsComponent from '../Components/LyricsComponent';
 
 export default function Lyrics() {
-    const {allSongs} = useContext(Context)
-   
+    const {songLyrics} = useContext(Context)
+ 
     return (
         <div>
-            
+             <LyricsComponent song={songLyrics}/>
         </div>
     )
 }

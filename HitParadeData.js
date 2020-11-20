@@ -8,6 +8,7 @@ const songData = [
         style: "Slow",
         isFavorited: false,
         price: 22000,
+        alreadyBought: false,
         lyrics: `
             Found love beyond all reason
             You gave Your life, Your all for me
@@ -31,6 +32,7 @@ const songData = [
         style: "Pop",
         isFavorited: false,
         price: 12000,
+        alreadyBought: false,
         lyrics: `
         I was sure by now
         God, you would have reached down
@@ -91,6 +93,7 @@ const songData = [
         style: "Country",
         isFavorited: false,
         price: 32000,
+        alreadyBought: false,
         lyrics: `
         Winter has come back again
         Feels like the season won't end
@@ -126,6 +129,7 @@ const songData = [
         style: "Kilalaka",
         isFavorited: false,
         price: 22800,
+        alreadyBought: false,
         lyrics: `
         When it comes to being true, at least true to me
         One thing I've found, one thing I found
@@ -163,6 +167,7 @@ const songData = [
         style: "Tsapiky",
         isFavorited: false,
         price: 25000,
+        alreadyBought: false,
         lyrics:`
         Tsy mampino fa dia tampoka teo Toa manonofy aho nefa indrisy fa lasa tokoa Ho any amin'ny mandrakizay? 
         `,

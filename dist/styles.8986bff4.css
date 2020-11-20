@@ -16,7 +16,7 @@ header a {
     justify-content: space-between;
 }
 
-main {
+#root {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -31,10 +31,36 @@ li {
     list-style: none;
 }
 
+.songs--container, .lyrics--container {
+    background-color: #272343;
+}
+
+.lyrics--container {
+    font-size: 16px; 
+    color: #FFFFFE;
+    padding: 70px;
+}
+
+.style--container {
+    display: flex;
+    gap: 32px;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.songs-desc {
+    font-size: 24px; 
+    color: #000000;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
 .songs--container {
     display: flex;
     justify-content: space-between;
-    background-color: #272343;
     margin-bottom: 32px;
     padding: 16px;
     border-radius: 5px;

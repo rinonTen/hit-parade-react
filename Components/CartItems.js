@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function CartItems({song}) {
+export default function CartItems({song, removeSong}) {
+
     return (
         <article className="songs--container">
-            <img src="" alt="trash-icon"/>
+            <img onClick={removeSong} src="" alt="trash-icon"/>
             <div className="songs-description">
                 <p className="artist-name">{song.title}</p>
                 <p className="artist-name">{song.artist}</p>
