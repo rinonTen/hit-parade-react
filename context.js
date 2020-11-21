@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import SongsData from './HitParadeData';
 
 const Context = React.createContext();
 
-function UseContextProvider(props) {
+function UseContextProvider(props) { 
     const [allSongs, setAllSongs] = useState([]);
     const [cartItems, setCartItems] = useState([]);
     const [songLyrics, setSongLyrics] = useState({});
@@ -41,8 +42,7 @@ function UseContextProvider(props) {
         });
         setAllSongs(newSongsArray);
     }
-
-console.log(allSongs)
+ 
     // increment votes
     function incrementVotes(idToIncrement) {
         const newSongsArray = allSongs.map(song => {
@@ -79,8 +79,13 @@ console.log(allSongs)
     }
 
     // Showing the lyrics
-    function showLyrics(song) {
-        setSongLyrics(song);
+    // function showLyrics(song) {
+    //     setSongLyrics(song);
+    // }
+
+    function showLyrics(songId) {
+        const songToShowInLyricsPage = allSongs.find(song => song.id === songId)
+        setSongLyrics(songToShowInLyricsPage);
     }
 
     // Delete a song

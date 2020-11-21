@@ -76,4 +76,8 @@ p {
     margin: 0;
 }
 
+a  .style--container p {
+    color: #333333;
+}
+
 /*# sourceMappingURL=/styles.8986bff4.css.map */

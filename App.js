@@ -5,6 +5,7 @@ import Songs from './Pages/Songs';
 import Cart from './Pages/Cart';
 import Lyrics from './Pages/Lyrics';
 import Styles from './Pages/Styles'
+import StylesDetail from './Pages/StylesDetail';
 
 export default function App() {
   return (
@@ -15,14 +16,17 @@ export default function App() {
 				<Route exact path="/">
             <Songs />
 				</Route>
-				<Route path="/cart">
+				<Route exact path="/cart">
 			    <Cart />
 				</Route>
-        <Route path="/lyrics">
+        <Route exact path="/song/:songId">
 			    <Lyrics />
 				</Route>
-        <Route path="/styles">
+        <Route exact path="/styles">
 			    <Styles />
+				</Route>
+        <Route exact path="/styles/:styleName">
+			    <StylesDetail />
 				</Route>
 			</Switch>
       </main>
