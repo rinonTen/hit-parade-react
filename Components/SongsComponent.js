@@ -1,6 +1,6 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import {Context} from '../context';
+import { Context } from '../context';
 import favoriteIconBorder from '../images/favorite_border.svg';
 import favoriteIconFill from '../images/favorite_fill.svg';
 import arrowUpward from '../images/arrow_upward.svg';
@@ -8,34 +8,36 @@ import arrowDownward from '../images/arrow_downward.svg';
 import cart from '../images/cart.svg';
 import cartFilled from '../images/cart_filled.svg';
 
-export default function SongsComponent({song}) { 
-    const { toggleFavorite, toggleCart, incrementVotes, decrementVotes, addToCart, showLyrics} = useContext(Context); 
- 
+export default function SongsComponent({ song }) {
+    const { toggleFavorite, toggleCart, incrementVotes, decrementVotes, addToCart, showLyrics } = useContext(Context);
+
     const handleCart = (obj, id) => {
-        addToCart(obj);
         toggleCart(id)
+        if (!song.alreadyBought) {
+            addToCart(obj);
+        }
     }
 
     const favoritedIcon = song.isFavorited ? favoriteIconFill : favoriteIconBorder;
-    const cartIconSource = song.alreadyBought ? cartFilled : cart ;
- 
+    const cartIconSource = song.alreadyBought ? cartFilled : cart;
+
     return (
         <article className="songs--container">
-            <img onClick={() => toggleFavorite(song.id)} src={favoritedIcon} alt="heart-icon"/>
+            <img className="heartIcon" onClick={() => toggleFavorite(song.id)} src={favoritedIcon} alt="heart-icon" />
             <div className="songs-description">
                 <p className="artist-name">{song.title}</p>
                 <p className="artist-name">{song.artist}</p>
             </div>
             <div className="upvotes-container">
+                <img onClick={() => incrementVotes(song.id)} src={arrowUpward} alt="image of up arrow" />
                 <span>{song.upvotes}</span>
-                <img onClick={() => incrementVotes(song.id)} src={arrowUpward} alt="image of up arrow"/>
             </div>
             <div className="downvotes-container">
+                <img onClick={() => decrementVotes(song.id)} src={arrowDownward} alt="image of down arrow" />
                 <span>{song.downvotes}</span>
-                <img onClick={() => decrementVotes(song.id)} src={arrowDownward} alt="image of down arrow"/>
             </div>
             <div className="add-cart">
-                <img onClick={() =>handleCart(song, song.id)} src={cartIconSource} alt="image of a cart"/>
+                <img onClick={() => handleCart(song, song.id)} src={cartIconSource} alt="image of a cart" />
             </div>
             <div className="song-lyrics">
                 <Link onClick={() => showLyrics(song.id)} to={`/song/${song.id}`}>

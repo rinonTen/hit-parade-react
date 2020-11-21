@@ -11,7 +11,7 @@ export default function CartItems({song, removeSong}) {
                 <p className="artist-name">{song.artist}</p>
             </div>
             <div className="upvotes-container">
-                <p>{song.price}</p>
+                <p>Ar {song.price}</p>
             </div>
         </article>
     )

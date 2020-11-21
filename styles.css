@@ -5,6 +5,10 @@ body {
     font-size: 16px;
 }
 
+header {
+    margin-bottom: 32px;
+}
+
 header a {
     font-size: 24px;
     color: #272343;
@@ -31,12 +35,12 @@ li {
     list-style: none;
 }
 
-.songs--container, .lyrics--container {
+.songs--container, .lyrics--container, .span-container {
     background-color: #272343;
 }
 
 .lyrics--container {
-    font-size: 16px; 
+    font-size: 16px;
     color: #FFFFFE;
     padding: 70px;
 }
@@ -52,10 +56,16 @@ li {
 }
 
 .songs-desc {
-    font-size: 24px; 
+    font-size: 24px;
     color: #000000;
     padding-top: 32px;
     padding-bottom: 32px;
+}
+
+.style-desc div {
+    padding: 56px;
+    margin-bottom: 16px;
+    border-radius: 5px;
 }
 
 .songs--container {
@@ -71,11 +81,93 @@ span {
     margin-right: 6px;
 }
 
+.style-desc span {
+    font-size: 36px;
+    line-height: 44px;
+    display: block;
+    color: #FFFFFE;
+}
+
+.style-desc .artist-title {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.style--container {
+    margin-bottom: 16px;
+}
+
+.style--container img {
+    height: 78px;
+}
+
+.style--container p {
+    font-size: 64px;
+    line-height: 78px;
+}
+
 p {
     font-size: 24px;
     margin: 0;
 }
 
-a  .style--container p {
+a .style--container {
+    margin: 0;
+}
+
+a .style--container p {
     color: #333333;
+}
+
+.add-song-form {
+    display: flex;
+    gap: 32px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+}
+
+input, select, textarea {
+    background: #BAE8E8;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-bottom: 12px;
+}
+
+select {
+    padding: 8px;
+    padding-left: 16;
+}
+
+input, select, textarea:focus {
+    border: rgba(175, 238, 238, 0.507) solid .8px;
+}
+
+input {
+    padding: 8px;
+    padding-left: 16px;
+}
+
+.order-song {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-price {
+    margin-top: 100px;
+}
+.submit-btn, .order-btn {
+    font-size: 64px;
+    line-height: 78px;
+    background: #FFD803;
+    margin-top: 48px;
+    padding: 20px;
+    border: none;
 }

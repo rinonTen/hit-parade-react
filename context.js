@@ -93,7 +93,34 @@ function UseContextProvider(props) {
         setCartItems(prevItems => prevItems.filter(item => item.id !== songId))
    }
 
-    return <Context.Provider value={{ allSongs, toggleFavorite, incrementVotes, decrementVotes, addToCart, cartItems, removeSong, showLyrics, songLyrics, toggleCart }}>
+   // Add a song 
+   function handleForm(e) {
+    e.preventDefault();
+    const form = e.target; 
+    const {title, artist, price, styles, lyrics} = form;
+    const newSongObj = {
+        id: Date.now(),
+        title: title.value,
+        artist: artist.value,
+        price: price.value,
+        upvotes: 0,
+        downvotes: 0,
+        isFavorited: false,
+        style: styles.value,
+        lyrics: lyrics.value,
+    }
+      allSongs.push(newSongObj);
+      setAllSongs([...allSongs])
+}
+
+// Sort the songs
+allSongs.sort((songA, songB) =>{
+   const song1= songA.upvotes - songB.upvotes;
+   const song2= songA.downvotes - songB.downvotes;
+   return song2 - song1;
+})
+  
+    return <Context.Provider value={{ allSongs, toggleFavorite, incrementVotes, decrementVotes, addToCart, cartItems, removeSong, showLyrics, songLyrics, toggleCart, handleForm}}>
         {props.children}
     </Context.Provider>
 }

@@ -33864,8 +33864,8 @@ var songData = [{
   id: 1,
   title: "The Time Has Come",
   artist: "Hillsong UNITED",
-  upvotes: 0,
-  downvotes: 0,
+  upvotes: 22,
+  downvotes: 12,
   style: "Slow",
   isFavorited: false,
   price: 22000,
@@ -33875,8 +33875,8 @@ var songData = [{
   id: 2,
   title: "Praise You In This Storm",
   artist: "Casting Crowns",
-  upvotes: 0,
-  downvotes: 0,
+  upvotes: 110,
+  downvotes: 110,
   style: "Pop",
   isFavorited: false,
   price: 12000,
@@ -33886,8 +33886,8 @@ var songData = [{
   id: 3,
   title: "your fellow",
   artist: "for KING & COUNTRY.",
-  upvotes: 0,
-  downvotes: 0,
+  upvotes: 30,
+  downvotes: 40,
   style: "Country",
   isFavorited: false,
   price: 32000,
@@ -33897,8 +33897,8 @@ var songData = [{
   id: 4,
   title: "Never Let Me Down",
   artist: "Kanye West",
-  upvotes: 0,
-  downvotes: 0,
+  upvotes: 60,
+  downvotes: 30,
   style: "Kilalaka",
   isFavorited: false,
   price: 22800,
@@ -33908,8 +33908,8 @@ var songData = [{
   id: 5,
   title: "Safidy",
   artist: "Nina's",
-  upvotes: 0,
-  downvotes: 0,
+  upvotes: 220,
+  downvotes: 110,
   style: "Tsapiky",
   isFavorited: false,
   price: 25000,
@@ -34123,8 +34123,38 @@ function UseContextProvider(props) {
         return item.id !== songId;
       });
     });
-  }
+  } // Add a song 
 
+
+  function handleForm(e) {
+    e.preventDefault();
+    var form = e.target;
+    var title = form.title,
+        artist = form.artist,
+        price = form.price,
+        styles = form.styles,
+        lyrics = form.lyrics;
+    var newSongObj = {
+      id: Date.now(),
+      title: title.value,
+      artist: artist.value,
+      price: price.value,
+      upvotes: 0,
+      downvotes: 0,
+      isFavorited: false,
+      style: styles.value,
+      lyrics: lyrics.value
+    };
+    allSongs.push(newSongObj);
+    setAllSongs(_toConsumableArray(allSongs));
+  } // Sort the songs
+
+
+  allSongs.sort(function (songA, songB) {
+    var song1 = songA.upvotes - songB.upvotes;
+    var song2 = songA.downvotes - songB.downvotes;
+    return song2 - song1;
+  });
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
     value: {
       allSongs: allSongs,
@@ -34136,7 +34166,8 @@ function UseContextProvider(props) {
       removeSong: removeSong,
       showLyrics: showLyrics,
       songLyrics: songLyrics,
-      toggleCart: toggleCart
+      toggleCart: toggleCart,
+      handleForm: handleForm
     }
   }, props.children);
 }
@@ -34240,8 +34271,11 @@ function SongsComponent(_ref) {
       showLyrics = _useContext.showLyrics;
 
   var handleCart = function handleCart(obj, id) {
-    addToCart(obj);
     toggleCart(id);
+
+    if (!song.alreadyBought) {
+      addToCart(obj);
+    }
   };
 
   var favoritedIcon = song.isFavorited ? _favorite_fill.default : _favorite_border.default;
@@ -34249,6 +34283,7 @@ function SongsComponent(_ref) {
   return /*#__PURE__*/_react.default.createElement("article", {
     className: "songs--container"
   }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "heartIcon",
     onClick: function onClick() {
       return toggleFavorite(song.id);
     },
@@ -34262,21 +34297,21 @@ function SongsComponent(_ref) {
     className: "artist-name"
   }, song.artist)), /*#__PURE__*/_react.default.createElement("div", {
     className: "upvotes-container"
-  }, /*#__PURE__*/_react.default.createElement("span", null, song.upvotes), /*#__PURE__*/_react.default.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement("img", {
     onClick: function onClick() {
       return incrementVotes(song.id);
     },
     src: _arrow_upward.default,
     alt: "image of up arrow"
-  })), /*#__PURE__*/_react.default.createElement("div", {
+  }), /*#__PURE__*/_react.default.createElement("span", null, song.upvotes)), /*#__PURE__*/_react.default.createElement("div", {
     className: "downvotes-container"
-  }, /*#__PURE__*/_react.default.createElement("span", null, song.downvotes), /*#__PURE__*/_react.default.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement("img", {
     onClick: function onClick() {
       return decrementVotes(song.id);
     },
     src: _arrow_downward.default,
     alt: "image of down arrow"
-  })), /*#__PURE__*/_react.default.createElement("div", {
+  }), /*#__PURE__*/_react.default.createElement("span", null, song.downvotes)), /*#__PURE__*/_react.default.createElement("div", {
     className: "add-cart"
   }, /*#__PURE__*/_react.default.createElement("img", {
     onClick: function onClick() {
@@ -34361,7 +34396,7 @@ function CartItems(_ref) {
     className: "artist-name"
   }, song.artist)), /*#__PURE__*/_react.default.createElement("div", {
     className: "upvotes-container"
-  }, /*#__PURE__*/_react.default.createElement("p", null, song.price)));
+  }, /*#__PURE__*/_react.default.createElement("p", null, "Ar ", song.price)));
 }
 },{"react":"node_modules/react/index.js","../images/trash_icon.svg":"images/trash_icon.svg"}],"Pages/Cart.js":[function(require,module,exports) {
 "use strict";
@@ -34409,15 +34444,16 @@ function Cart() {
     });
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "cart--container"
-  }, cartItemsElement, /*#__PURE__*/_react.default.createElement("div", {
+  var buttonAndTotalEl = pricesArr.length > 0 ? /*#__PURE__*/_react.default.createElement("div", {
     className: "order-song"
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "order-btn"
   }, "Buy"), /*#__PURE__*/_react.default.createElement("p", {
     className: "total-price"
-  }, "Total: ", totalPrice)));
+  }, "Total: Ar ", totalPrice)) : "";
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "cart--container"
+  }, cartItemsElement, buttonAndTotalEl);
 }
 },{"react":"node_modules/react/index.js","../context":"context.js","../Components/CartItems":"Components/CartItems.js"}],"Components/LyricsComponent.js":[function(require,module,exports) {
 "use strict";
@@ -34471,7 +34507,103 @@ function Lyrics() {
     song: songLyrics
   }));
 }
-},{"react":"node_modules/react/index.js","../context":"context.js","../Components/LyricsComponent":"Components/LyricsComponent.js"}],"images/headset.svg":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../context":"context.js","../Components/LyricsComponent":"Components/LyricsComponent.js"}],"Components/FormComponent.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = FormComponent;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _context = require("../context");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function FormComponent() {
+  var _useContext = (0, _react.useContext)(_context.Context),
+      handleForm = _useContext.handleForm;
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-container"
+  }, /*#__PURE__*/_react.default.createElement("form", {
+    className: "add-song-form",
+    onSubmit: handleForm
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "title"
+  }, "Add a title:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    name: "title",
+    id: "title",
+    required: true
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "artist"
+  }, "Artist:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    name: "artist",
+    id: "artist",
+    required: true
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "price"
+  }, "Price:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    name: "price",
+    id: "price",
+    required: true
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "styles"
+  }, "Style of the song:"), /*#__PURE__*/_react.default.createElement("select", {
+    name: "styles",
+    id: "styles"
+  }, /*#__PURE__*/_react.default.createElement("option", {
+    value: "country"
+  }, "Country"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "kilalaka"
+  }, "Kilalaka"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "RNB"
+  }, "RNB"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "Pop"
+  }, "Pop"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "tsapiky"
+  }, "Tsapiky"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "slow"
+  }, "Slow")), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "lyrics"
+  }), /*#__PURE__*/_react.default.createElement("textarea", {
+    name: "lyrics",
+    id: "lyrics",
+    cols: "30",
+    rows: "10",
+    required: true
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "button-container"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "submit-btn"
+  }, "Add"))));
+}
+},{"react":"node_modules/react/index.js","../context":"context.js"}],"Pages/AddSong.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = AddSong;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _FormComponent = _interopRequireDefault(require("../Components/FormComponent"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function AddSong() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_FormComponent.default, null));
+}
+},{"react":"node_modules/react/index.js","../Components/FormComponent":"Components/FormComponent.js"}],"images/headset.svg":[function(require,module,exports) {
 module.exports = "/headset.82080513.svg";
 },{}],"Components/StylesComponent.js":[function(require,module,exports) {
 "use strict";
@@ -34538,7 +34670,31 @@ function Styles() {
   });
   return /*#__PURE__*/_react.default.createElement("div", null, styleEl);
 }
-},{"react":"node_modules/react/index.js","../context":"context.js","../Components/StylesComponent":"Components/StylesComponent.js"}],"Pages/StylesDetail.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../context":"context.js","../Components/StylesComponent":"Components/StylesComponent.js"}],"Components/StyleDetailsComponent.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = stylesDetailComponent;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function stylesDetailComponent(_ref) {
+  var song = _ref.song;
+  return /*#__PURE__*/_react.default.createElement("article", {
+    className: "style-desc"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "span-container"
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "artist-name"
+  }, song.artist), /*#__PURE__*/_react.default.createElement("span", {
+    className: "artist-title"
+  }, song.title)));
+}
+},{"react":"node_modules/react/index.js"}],"Pages/StylesDetail.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34552,15 +34708,15 @@ var _reactRouterDom = require("react-router-dom");
 
 var _context = require("../context");
 
-var _LyricsComponent = _interopRequireDefault(require("../Components/LyricsComponent"));
+var _headset = _interopRequireDefault(require("../images/headset.svg"));
+
+var _StyleDetailsComponent = _interopRequireDefault(require("../Components/StyleDetailsComponent"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function StylesDetail() {
   var _useParams = (0, _reactRouterDom.useParams)(),
@@ -34573,15 +34729,19 @@ function StylesDetail() {
     return song.style == styleName;
   });
   var styleDetailEl = styles.map(function (song) {
-    var _React$createElement;
-
-    return /*#__PURE__*/_react.default.createElement(_LyricsComponent.default, (_React$createElement = {
-      key: song.id
-    }, _defineProperty(_React$createElement, "key", true), _defineProperty(_React$createElement, "song", song), _React$createElement));
+    return /*#__PURE__*/_react.default.createElement(_StyleDetailsComponent.default, {
+      key: song.id,
+      song: song
+    });
   });
-  return /*#__PURE__*/_react.default.createElement("div", null, styleDetailEl);
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "style--container"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headphone image"
+  }), /*#__PURE__*/_react.default.createElement("p", null, styleName)), styleDetailEl);
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../context":"context.js","../Components/LyricsComponent":"Components/LyricsComponent.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../context":"context.js","../images/headset.svg":"images/headset.svg","../Components/StyleDetailsComponent":"Components/StyleDetailsComponent.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34600,6 +34760,8 @@ var _Songs = _interopRequireDefault(require("./Pages/Songs"));
 var _Cart = _interopRequireDefault(require("./Pages/Cart"));
 
 var _Lyrics = _interopRequireDefault(require("./Pages/Lyrics"));
+
+var _AddSong = _interopRequireDefault(require("./Pages/AddSong"));
 
 var _Styles = _interopRequireDefault(require("./Pages/Styles"));
 
@@ -34623,9 +34785,12 @@ function App() {
   }, /*#__PURE__*/_react.default.createElement(_Styles.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/styles/:styleName"
-  }, /*#__PURE__*/_react.default.createElement(_StylesDetail.default, null)))));
+  }, /*#__PURE__*/_react.default.createElement(_StylesDetail.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/add"
+  }, /*#__PURE__*/_react.default.createElement(_AddSong.default, null)))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Components/Header":"Components/Header.js","./Pages/Songs":"Pages/Songs.js","./Pages/Cart":"Pages/Cart.js","./Pages/Lyrics":"Pages/Lyrics.js","./Pages/Styles":"Pages/Styles.js","./Pages/StylesDetail":"Pages/StylesDetail.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Components/Header":"Components/Header.js","./Pages/Songs":"Pages/Songs.js","./Pages/Cart":"Pages/Cart.js","./Pages/Lyrics":"Pages/Lyrics.js","./Pages/AddSong":"Pages/AddSong.js","./Pages/Styles":"Pages/Styles.js","./Pages/StylesDetail":"Pages/StylesDetail.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -34669,7 +34834,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50129" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60587" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

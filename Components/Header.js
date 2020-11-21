@@ -30,6 +30,7 @@ function Header() {
                         🛒 Cart
                     </Link>
                 </li>
+                
             </nav>
         </header>
     );
