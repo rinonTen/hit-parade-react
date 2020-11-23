@@ -75,6 +75,7 @@ li {
 
 .heartIcon {
     max-width: 26px;
+    margin-top: 16px;
 }
 
 .upvotes-container, .downvotes-container {
