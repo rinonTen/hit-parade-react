@@ -16,7 +16,7 @@ export default function Cart() {
     // Empty the cart
     setTimeout(() => {
      setCartItems([]);
-    }, 4000);
+    }, 5000);
   }
 
   const cartItemsElement = cartItems.map(item => {

@@ -34030,26 +34030,27 @@ const songData = [{
         `
 }, {
   id: 6,
-  title: "The Time Has Come",
-  artist: "Hillsong UNITED",
-  upvotes: 0,
-  downvotes: 0,
+  title: "Beatiful In White",
+  artist: "Westlife",
+  upvotes: 220,
+  downvotes: 20,
   style: "Slow",
   isFavorited: false,
-  price: 22000,
+  price: 24400,
   alreadyBought: false,
   lyrics: `
-            Found love beyond all reason
-            You gave Your life, Your all for me
-            And called me Yours foreverCaught in the mercy fallout
-            I found hope, found life
-            Found all I need
-            'Cause You're all I needThe time has come
-            To stand for all we believe in
-            So I, for one, am gonna
-            Give my praise to YouToday, today, it's all or nothing
-            All the way, the praise goes out to You
-            Yeah, all the praise goes out to You
+        Not sure if you know this
+        But when we first met
+        I got so nervous
+        I couldn't speak
+        In that very moment I found the one and
+        My life had found its missing pieceSo as long as I live I'll love you
+        Will have and hold you
+        You look so beautiful in white
+        And from now to my very last breath
+        This day I'll cherish
+        You look so beautiful in white
+        Tonight
         `
 }, {
   id: 7,
@@ -34226,8 +34227,40 @@ function UseContextProvider(props) {
   const [allSongs, setAllSongs] = (0, _react.useState)([]);
   const [cartItems, setCartItems] = (0, _react.useState)([]);
   const [songLyrics, setSongLyrics] = (0, _react.useState)({});
+
+  function getSongs() {
+    const lsAllSongs = JSON.parse(localStorage.getItem("allSongs"));
+
+    if (lsAllSongs) {
+      // Set the local Storage value to state
+      setAllSongs(lsAllSongs);
+    } else {
+      setAllSongs(_HitParadeData.default);
+    }
+  }
+
   (0, _react.useEffect)(() => {
-    setAllSongs(_HitParadeData.default);
+    if (allSongs.length > 0) {
+      localStorage.setItem("allSongs", JSON.stringify(allSongs));
+    }
+  }, [allSongs]); // Set the cart items to the local storage
+
+  function initCartItems() {
+    const lsCartItems = JSON.parse(localStorage.getItem("cartItems"));
+
+    if (lsCartItems) {
+      setCartItems(lsCartItems);
+    }
+  }
+
+  (0, _react.useEffect)(() => {
+    if (cartItems.length > 0) {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
+  (0, _react.useEffect)(() => {
+    getSongs();
+    initCartItems();
   }, []);
 
   function toggleFavorite(idToToggle) {
@@ -34614,7 +34647,7 @@ function Cart() {
 
     setTimeout(() => {
       setCartItems([]);
-    }, 4000);
+    }, 5000);
   }
 
   const cartItemsElement = cartItems.map(item => {
@@ -35032,7 +35065,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49657" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52970" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -174,26 +174,27 @@ const songData = [
     },
     {
         id: 6,
-        title: "The Time Has Come",
-        artist: "Hillsong UNITED",
-        upvotes: 0,
-        downvotes: 0,
+        title: "Beatiful In White",
+        artist: "Westlife",
+        upvotes: 220,
+        downvotes: 20,
         style: "Slow",
         isFavorited: false,
-        price: 22000,
+        price: 24400,
         alreadyBought: false,
         lyrics: `
-            Found love beyond all reason
-            You gave Your life, Your all for me
-            And called me Yours foreverCaught in the mercy fallout
-            I found hope, found life
-            Found all I need
-            'Cause You're all I needThe time has come
-            To stand for all we believe in
-            So I, for one, am gonna
-            Give my praise to YouToday, today, it's all or nothing
-            All the way, the praise goes out to You
-            Yeah, all the praise goes out to You
+        Not sure if you know this
+        But when we first met
+        I got so nervous
+        I couldn't speak
+        In that very moment I found the one and
+        My life had found its missing pieceSo as long as I live I'll love you
+        Will have and hold you
+        You look so beautiful in white
+        And from now to my very last breath
+        This day I'll cherish
+        You look so beautiful in white
+        Tonight
         `,
     },
     {
