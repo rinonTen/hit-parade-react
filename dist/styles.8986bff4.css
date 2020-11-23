@@ -98,12 +98,28 @@ img.arrow-down {
 }
 
 .songs--container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 10% 30% 15% 15% 15% 15%;
     margin-bottom: 32px;
     padding: 16px;
     border-radius: 5px;
     color: #FFFFFE;
+}
+
+
+.songs--container div:not(:first-of-type) {
+    margin-left: 32px;
+}
+
+.cart-items--container { 
+    grid-template-columns: 15% 50% 30%;
+}
+
+
+    
+.cart-items--container img{
+    max-width: 25px;
+    margin-top: 17px;
 }
 
 span {

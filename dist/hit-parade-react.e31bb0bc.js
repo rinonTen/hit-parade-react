@@ -34597,7 +34597,7 @@ function CartItems({
   removeSong
 }) {
   return /*#__PURE__*/_react.default.createElement("article", {
-    className: "songs--container"
+    className: "songs--container cart-items--container"
   }, /*#__PURE__*/_react.default.createElement("img", {
     onClick: removeSong,
     src: _trash_icon.default,
