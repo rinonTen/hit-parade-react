@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Context } from '../context';
 import favoriteIconBorder from '../images/favorite_border.svg';
 import favoriteIconFill from '../images/favorite_fill.svg';
@@ -9,7 +9,7 @@ import cart from '../images/cart.svg';
 import cartFilled from '../images/cart_filled.svg';
 
 export default function SongsComponent({ song }) {
-    const { toggleFavorite, toggleCart, incrementUpVotes, incrementDownVotes, addToCart, showLyrics } = useContext(Context);
+    const { toggleFavorite, toggleCart, incrementUpVotes, incrementDownVotes, addToCart } = useContext(Context);
 
     const handleCart = (obj, id) => {
         toggleCart(id)
@@ -40,7 +40,7 @@ export default function SongsComponent({ song }) {
                 <img onClick={() => handleCart(song, song.id)} src={cartIconSource} alt="image of a cart" />
             </div>
             <div className="song-lyrics">
-                <Link onClick={() => showLyrics(song.id)} to={`/song/${song.id}`}>
+                <Link to={`/song/${song.id}`}>
                    {`. . .`}
                 </Link>
             </div>

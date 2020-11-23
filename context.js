@@ -105,19 +105,9 @@ function UseContextProvider(props) {
 
     // Add to cart 
     function addToCart(song) {
-        setCartItems(prevItems => [...cartItems, song]);
+        setCartItems(prevItems => [...prevItems, song]);
     }
-
-    // Showing the lyrics
-    // function showLyrics(song) {
-    //     setSongLyrics(song);
-    // }
-
-    function showLyrics(songId) {
-        const songToShowInLyricsPage = allSongs.find(song => song.id === songId)
-        setSongLyrics(songToShowInLyricsPage);
-    }
-
+ 
     // Delete a song
     function removeSong(songId) {
         setCartItems(prevItems => prevItems.filter(item => item.id !== songId))
@@ -151,7 +141,7 @@ function UseContextProvider(props) {
         return song2 - song1;
     })
 
-    return <Context.Provider value={{ allSongs, toggleFavorite, incrementUpVotes, incrementDownVotes, addToCart, cartItems, setCartItems, removeSong, showLyrics, songLyrics, toggleCart, handleForm }}>
+    return <Context.Provider value={{ allSongs, toggleFavorite, incrementUpVotes, incrementDownVotes, addToCart, cartItems, setCartItems, removeSong, songLyrics, toggleCart, handleForm }}>
         {props.children}
     </Context.Provider>
 }
