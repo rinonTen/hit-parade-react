@@ -34504,6 +34504,7 @@ function SongsComponent({
     className: "songs--container"
   }, /*#__PURE__*/_react.default.createElement("img", {
     className: "heartIcon",
+    className: "heartIcon",
     onClick: () => toggleFavorite(song.id),
     src: favoritedIcon,
     alt: "heart-icon"
@@ -34516,12 +34517,14 @@ function SongsComponent({
   }, song.artist)), /*#__PURE__*/_react.default.createElement("div", {
     className: "upvotes-container"
   }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "arrow-up",
     onClick: () => incrementUpVotes(song.id),
     src: _arrow_upward.default,
     alt: "image of up arrow"
   }), /*#__PURE__*/_react.default.createElement("span", null, song.upvotes)), /*#__PURE__*/_react.default.createElement("div", {
     className: "downvotes-container"
   }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "arrow-down",
     onClick: () => incrementDownVotes(song.id),
     src: _arrow_downward.default,
     alt: "image of down arrow"
@@ -34536,7 +34539,7 @@ function SongsComponent({
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     onClick: () => showLyrics(song.id),
     to: `/song/${song.id}`
-  }, "Lyrics")));
+  }, `. . .`)));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../context":"context.js","../images/favorite_border.svg":"images/favorite_border.svg","../images/favorite_fill.svg":"images/favorite_fill.svg","../images/arrow_upward.svg":"images/arrow_upward.svg","../images/arrow_downward.svg":"images/arrow_downward.svg","../images/cart.svg":"images/cart.svg","../images/cart_filled.svg":"images/cart_filled.svg"}],"Pages/Songs.js":[function(require,module,exports) {
 "use strict";

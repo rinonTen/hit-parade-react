@@ -68,6 +68,30 @@ li {
     border-radius: 5px;
 }
 
+.heartIcon {
+    max-width: 26px;
+}
+
+.upvotes-container, .downvotes-container {
+    margin-top: 7px;
+}
+
+img.arrow-up {
+    margin-bottom: -4px;
+}
+
+img.arrow-down {
+    margin-bottom: -5px;
+}
+
+.add-cart {
+    margin-top: 11px;
+}
+
+.add-cart img {
+    max-width: 26px;
+}
+
 .songs--container {
     display: flex;
     justify-content: space-between;
@@ -163,6 +187,7 @@ input {
 .total-price {
     margin-top: 100px;
 }
+
 .submit-btn, .order-btn {
     font-size: 64px;
     line-height: 78px;

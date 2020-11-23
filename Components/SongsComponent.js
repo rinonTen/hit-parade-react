@@ -23,17 +23,17 @@ export default function SongsComponent({ song }) {
 
     return (
         <article className="songs--container">
-            <img className="heartIcon" onClick={() => toggleFavorite(song.id)} src={favoritedIcon} alt="heart-icon" />
+            <img className="heartIcon" className="heartIcon" onClick={() => toggleFavorite(song.id)} src={favoritedIcon} alt="heart-icon" />
             <div className="songs-description">
                 <p className="artist-name">{song.title}</p>
                 <p className="artist-name">{song.artist}</p>
             </div>
             <div className="upvotes-container">
-                <img onClick={() => incrementUpVotes(song.id)} src={arrowUpward} alt="image of up arrow" />
+                <img className="arrow-up" onClick={() => incrementUpVotes(song.id)} src={arrowUpward} alt="image of up arrow" />
                 <span>{song.upvotes}</span>
             </div>
             <div className="downvotes-container">
-                <img onClick={() => incrementDownVotes(song.id)} src={arrowDownward} alt="image of down arrow" />
+                <img className="arrow-down"  onClick={() => incrementDownVotes(song.id)} src={arrowDownward} alt="image of down arrow" />
                 <span>{song.downvotes}</span>
             </div>
             <div className="add-cart">
@@ -41,7 +41,7 @@ export default function SongsComponent({ song }) {
             </div>
             <div className="song-lyrics">
                 <Link onClick={() => showLyrics(song.id)} to={`/song/${song.id}`}>
-                    Lyrics
+                   {`. . .`}
                 </Link>
             </div>
         </article>
