@@ -33860,7 +33860,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var songData = [{
+const songData = [{
   id: 1,
   title: "The Time Has Come",
   artist: "Hillsong UNITED",
@@ -33870,7 +33870,19 @@ var songData = [{
   isFavorited: false,
   price: 22000,
   alreadyBought: false,
-  lyrics: "\n            Found love beyond all reason\n            You gave Your life, Your all for me\n            And called me Yours foreverCaught in the mercy fallout\n            I found hope, found life\n            Found all I need\n            'Cause You're all I needThe time has come\n            To stand for all we believe in\n            So I, for one, am gonna\n            Give my praise to YouToday, today, it's all or nothing\n            All the way, the praise goes out to You\n            Yeah, all the praise goes out to You\n        "
+  lyrics: `
+            Found love beyond all reason
+            You gave Your life, Your all for me
+            And called me Yours foreverCaught in the mercy fallout
+            I found hope, found life
+            Found all I need
+            'Cause You're all I needThe time has come
+            To stand for all we believe in
+            So I, for one, am gonna
+            Give my praise to YouToday, today, it's all or nothing
+            All the way, the praise goes out to You
+            Yeah, all the praise goes out to You
+        `
 }, {
   id: 2,
   title: "Praise You In This Storm",
@@ -33881,7 +33893,56 @@ var songData = [{
   isFavorited: false,
   price: 12000,
   alreadyBought: false,
-  lyrics: "\n        I was sure by now\n        God, you would have reached down\n        And wiped our tears away\n        Stepped in and saved the day\n        But once again, I say \"Amen,\" and it's still raining\n        \n        As the thunder rolls\n        I barely hear your whisper through the rain\n        \"I'm with you\"\n        And as your mercy falls\n        I raise my hands and praise the God who gives\n        And takes away\n        \n        And I'll praise you in this storm\n        And I will lift my hands\n        For you are who you are\n        No matter where I am\n        \n        And every tear I've cried\n        You hold in your hand\n        You never left my side\n        And though my heart is torn\n        I will praise you in this storm\n        \n        I remember when\n        I stumbled in the wind\n        You heard my cry to you\n        And raised me up again\n        My strength is almost gone\n        How can I carry on\n        If I can't find you\n        \n        But as the thunder rolls\n        I barely hear your whisper through the rain\n        \"I'm with you\"\n        And as your mercy falls\n        I raise my hands and praise the God who gives\n        And takes away\n        \n        And I'll praise you in this storm\n        And I will lift my hands\n        For you are who you are\n        No matter where I am\n        \n        And every tear I've cried\n        You hold in your hand\n        You never left my side\n        And though my heart is torn\n        I will praise you in this storm"
+  lyrics: `
+        I was sure by now
+        God, you would have reached down
+        And wiped our tears away
+        Stepped in and saved the day
+        But once again, I say "Amen," and it's still raining
+        
+        As the thunder rolls
+        I barely hear your whisper through the rain
+        "I'm with you"
+        And as your mercy falls
+        I raise my hands and praise the God who gives
+        And takes away
+        
+        And I'll praise you in this storm
+        And I will lift my hands
+        For you are who you are
+        No matter where I am
+        
+        And every tear I've cried
+        You hold in your hand
+        You never left my side
+        And though my heart is torn
+        I will praise you in this storm
+        
+        I remember when
+        I stumbled in the wind
+        You heard my cry to you
+        And raised me up again
+        My strength is almost gone
+        How can I carry on
+        If I can't find you
+        
+        But as the thunder rolls
+        I barely hear your whisper through the rain
+        "I'm with you"
+        And as your mercy falls
+        I raise my hands and praise the God who gives
+        And takes away
+        
+        And I'll praise you in this storm
+        And I will lift my hands
+        For you are who you are
+        No matter where I am
+        
+        And every tear I've cried
+        You hold in your hand
+        You never left my side
+        And though my heart is torn
+        I will praise you in this storm`
 }, {
   id: 3,
   title: "your fellow",
@@ -33892,7 +33953,31 @@ var songData = [{
   isFavorited: false,
   price: 32000,
   alreadyBought: false,
-  lyrics: "\n        Winter has come back again\n        Feels like the season won't end\n        My faith is tired tonight\n        And I won't try to pretend\n        I've got it all figured out\n        That I don't have any doubts\n        I've got a busted heart\n        I need You now\n        Yeah I need You now\n        \n        Hold on to me\n        Hold on to me\n        Don't let me lose my way\n        Hold on to me\n        \n        I am the wandering son\n        Enough is never enough\n        I keep chasing the wind\n        Instead of chasing Your love\n        I'm screaming out Your name\n        Don't let me fall on my face\n        I've got a busted heart\n        I'm in need of a change\n        Yeah, I'm desperate for grace"
+  lyrics: `
+        Winter has come back again
+        Feels like the season won't end
+        My faith is tired tonight
+        And I won't try to pretend
+        I've got it all figured out
+        That I don't have any doubts
+        I've got a busted heart
+        I need You now
+        Yeah I need You now
+        
+        Hold on to me
+        Hold on to me
+        Don't let me lose my way
+        Hold on to me
+        
+        I am the wandering son
+        Enough is never enough
+        I keep chasing the wind
+        Instead of chasing Your love
+        I'm screaming out Your name
+        Don't let me fall on my face
+        I've got a busted heart
+        I'm in need of a change
+        Yeah, I'm desperate for grace`
 }, {
   id: 4,
   title: "Never Let Me Down",
@@ -33903,7 +33988,33 @@ var songData = [{
   isFavorited: false,
   price: 22800,
   alreadyBought: false,
-  lyrics: "\n        When it comes to being true, at least true to me\n        One thing I've found, one thing I found\n        Oh no, you'll never let me down\n        Get up, I get down, get up, I get down\n        Get up, I get down, get up, I get down\n        Get up, I get down, get up, I get down\n        \n        Jay-Z:\n        Yo, first I snatched the streets, then I snatched the charts\n        First I had their ear, now I have their heart\n        Rappers came and went, I've been here from the start\n        I seen them put it together, watched them take it apart\n        Seen the Rovers roll up with ribbons\n        I seen them re-po'd, re-sold, then re-driven\n        So when I reload, he holds number one position\n        When you hot, I'm hot\n        And when your feet cold, mines is sizzling\n        It's plain to see, niggas can't fuck with me\n        'Cause I'ma be that nigga for life\n        This is not an image, this is God-given\n        This is hard-livin', mixed with Cristal sippin'\n        It's the most consistent, Hov\n        Give you the most hits you can fit inside a whole disc and\n        Nigga I'm home on these charts, y'all niggas visitin'\n        It's Hov tradition, Jeff Gordon of rap\n        I'm back to claim pole position, holla at ya boy"
+  lyrics: `
+        When it comes to being true, at least true to me
+        One thing I've found, one thing I found
+        Oh no, you'll never let me down
+        Get up, I get down, get up, I get down
+        Get up, I get down, get up, I get down
+        Get up, I get down, get up, I get down
+        
+        Jay-Z:
+        Yo, first I snatched the streets, then I snatched the charts
+        First I had their ear, now I have their heart
+        Rappers came and went, I've been here from the start
+        I seen them put it together, watched them take it apart
+        Seen the Rovers roll up with ribbons
+        I seen them re-po'd, re-sold, then re-driven
+        So when I reload, he holds number one position
+        When you hot, I'm hot
+        And when your feet cold, mines is sizzling
+        It's plain to see, niggas can't fuck with me
+        'Cause I'ma be that nigga for life
+        This is not an image, this is God-given
+        This is hard-livin', mixed with Cristal sippin'
+        It's the most consistent, Hov
+        Give you the most hits you can fit inside a whole disc and
+        Nigga I'm home on these charts, y'all niggas visitin'
+        It's Hov tradition, Jeff Gordon of rap
+        I'm back to claim pole position, holla at ya boy`
 }, {
   id: 5,
   title: "Safidy",
@@ -33914,7 +34025,9 @@ var songData = [{
   isFavorited: false,
   price: 25000,
   alreadyBought: false,
-  lyrics: "\n        Tsy mampino fa dia tampoka teo Toa manonofy aho nefa indrisy fa lasa tokoa Ho any amin'ny mandrakizay? \n        "
+  lyrics: `
+        Tsy mampino fa dia tampoka teo Toa manonofy aho nefa indrisy fa lasa tokoa Ho any amin'ny mandrakizay? 
+        `
 }, {
   id: 6,
   title: "The Time Has Come",
@@ -33925,7 +34038,19 @@ var songData = [{
   isFavorited: false,
   price: 22000,
   alreadyBought: false,
-  lyrics: "\n            Found love beyond all reason\n            You gave Your life, Your all for me\n            And called me Yours foreverCaught in the mercy fallout\n            I found hope, found life\n            Found all I need\n            'Cause You're all I needThe time has come\n            To stand for all we believe in\n            So I, for one, am gonna\n            Give my praise to YouToday, today, it's all or nothing\n            All the way, the praise goes out to You\n            Yeah, all the praise goes out to You\n        "
+  lyrics: `
+            Found love beyond all reason
+            You gave Your life, Your all for me
+            And called me Yours foreverCaught in the mercy fallout
+            I found hope, found life
+            Found all I need
+            'Cause You're all I needThe time has come
+            To stand for all we believe in
+            So I, for one, am gonna
+            Give my praise to YouToday, today, it's all or nothing
+            All the way, the praise goes out to You
+            Yeah, all the praise goes out to You
+        `
 }, {
   id: 7,
   title: "Praise You In This Storm",
@@ -33936,7 +34061,56 @@ var songData = [{
   isFavorited: false,
   price: 12000,
   alreadyBought: false,
-  lyrics: "\n        I was sure by now\n        God, you would have reached down\n        And wiped our tears away\n        Stepped in and saved the day\n        But once again, I say \"Amen,\" and it's still raining\n        \n        As the thunder rolls\n        I barely hear your whisper through the rain\n        \"I'm with you\"\n        And as your mercy falls\n        I raise my hands and praise the God who gives\n        And takes away\n        \n        And I'll praise you in this storm\n        And I will lift my hands\n        For you are who you are\n        No matter where I am\n        \n        And every tear I've cried\n        You hold in your hand\n        You never left my side\n        And though my heart is torn\n        I will praise you in this storm\n        \n        I remember when\n        I stumbled in the wind\n        You heard my cry to you\n        And raised me up again\n        My strength is almost gone\n        How can I carry on\n        If I can't find you\n        \n        But as the thunder rolls\n        I barely hear your whisper through the rain\n        \"I'm with you\"\n        And as your mercy falls\n        I raise my hands and praise the God who gives\n        And takes away\n        \n        And I'll praise you in this storm\n        And I will lift my hands\n        For you are who you are\n        No matter where I am\n        \n        And every tear I've cried\n        You hold in your hand\n        You never left my side\n        And though my heart is torn\n        I will praise you in this storm"
+  lyrics: `
+        I was sure by now
+        God, you would have reached down
+        And wiped our tears away
+        Stepped in and saved the day
+        But once again, I say "Amen," and it's still raining
+        
+        As the thunder rolls
+        I barely hear your whisper through the rain
+        "I'm with you"
+        And as your mercy falls
+        I raise my hands and praise the God who gives
+        And takes away
+        
+        And I'll praise you in this storm
+        And I will lift my hands
+        For you are who you are
+        No matter where I am
+        
+        And every tear I've cried
+        You hold in your hand
+        You never left my side
+        And though my heart is torn
+        I will praise you in this storm
+        
+        I remember when
+        I stumbled in the wind
+        You heard my cry to you
+        And raised me up again
+        My strength is almost gone
+        How can I carry on
+        If I can't find you
+        
+        But as the thunder rolls
+        I barely hear your whisper through the rain
+        "I'm with you"
+        And as your mercy falls
+        I raise my hands and praise the God who gives
+        And takes away
+        
+        And I'll praise you in this storm
+        And I will lift my hands
+        For you are who you are
+        No matter where I am
+        
+        And every tear I've cried
+        You hold in your hand
+        You never left my side
+        And though my heart is torn
+        I will praise you in this storm`
 }, {
   id: 8,
   title: "your fellow",
@@ -33947,7 +34121,31 @@ var songData = [{
   isFavorited: false,
   price: 32000,
   alreadyBought: false,
-  lyrics: "\n        Winter has come back again\n        Feels like the season won't end\n        My faith is tired tonight\n        And I won't try to pretend\n        I've got it all figured out\n        That I don't have any doubts\n        I've got a busted heart\n        I need You now\n        Yeah I need You now\n        \n        Hold on to me\n        Hold on to me\n        Don't let me lose my way\n        Hold on to me\n        \n        I am the wandering son\n        Enough is never enough\n        I keep chasing the wind\n        Instead of chasing Your love\n        I'm screaming out Your name\n        Don't let me fall on my face\n        I've got a busted heart\n        I'm in need of a change\n        Yeah, I'm desperate for grace"
+  lyrics: `
+        Winter has come back again
+        Feels like the season won't end
+        My faith is tired tonight
+        And I won't try to pretend
+        I've got it all figured out
+        That I don't have any doubts
+        I've got a busted heart
+        I need You now
+        Yeah I need You now
+        
+        Hold on to me
+        Hold on to me
+        Don't let me lose my way
+        Hold on to me
+        
+        I am the wandering son
+        Enough is never enough
+        I keep chasing the wind
+        Instead of chasing Your love
+        I'm screaming out Your name
+        Don't let me fall on my face
+        I've got a busted heart
+        I'm in need of a change
+        Yeah, I'm desperate for grace`
 }, {
   id: 9,
   title: "Never Let Me Down",
@@ -33958,7 +34156,33 @@ var songData = [{
   isFavorited: false,
   price: 22800,
   alreadyBought: false,
-  lyrics: "\n        When it comes to being true, at least true to me\n        One thing I've found, one thing I found\n        Oh no, you'll never let me down\n        Get up, I get down, get up, I get down\n        Get up, I get down, get up, I get down\n        Get up, I get down, get up, I get down\n        \n        Jay-Z:\n        Yo, first I snatched the streets, then I snatched the charts\n        First I had their ear, now I have their heart\n        Rappers came and went, I've been here from the start\n        I seen them put it together, watched them take it apart\n        Seen the Rovers roll up with ribbons\n        I seen them re-po'd, re-sold, then re-driven\n        So when I reload, he holds number one position\n        When you hot, I'm hot\n        And when your feet cold, mines is sizzling\n        It's plain to see, niggas can't fuck with me\n        'Cause I'ma be that nigga for life\n        This is not an image, this is God-given\n        This is hard-livin', mixed with Cristal sippin'\n        It's the most consistent, Hov\n        Give you the most hits you can fit inside a whole disc and\n        Nigga I'm home on these charts, y'all niggas visitin'\n        It's Hov tradition, Jeff Gordon of rap\n        I'm back to claim pole position, holla at ya boy"
+  lyrics: `
+        When it comes to being true, at least true to me
+        One thing I've found, one thing I found
+        Oh no, you'll never let me down
+        Get up, I get down, get up, I get down
+        Get up, I get down, get up, I get down
+        Get up, I get down, get up, I get down
+        
+        Jay-Z:
+        Yo, first I snatched the streets, then I snatched the charts
+        First I had their ear, now I have their heart
+        Rappers came and went, I've been here from the start
+        I seen them put it together, watched them take it apart
+        Seen the Rovers roll up with ribbons
+        I seen them re-po'd, re-sold, then re-driven
+        So when I reload, he holds number one position
+        When you hot, I'm hot
+        And when your feet cold, mines is sizzling
+        It's plain to see, niggas can't fuck with me
+        'Cause I'ma be that nigga for life
+        This is not an image, this is God-given
+        This is hard-livin', mixed with Cristal sippin'
+        It's the most consistent, Hov
+        Give you the most hits you can fit inside a whole disc and
+        Nigga I'm home on these charts, y'all niggas visitin'
+        It's Hov tradition, Jeff Gordon of rap
+        I'm back to claim pole position, holla at ya boy`
 }, {
   id: 10,
   title: "Safidy",
@@ -33969,7 +34193,9 @@ var songData = [{
   isFavorited: false,
   price: 25000,
   alreadyBought: false,
-  lyrics: "\n        Tsy mampino fa dia tampoka teo Toa manonofy aho nefa indrisy fa lasa tokoa Ho any amin'ny mandrakizay? \n        "
+  lyrics: `
+        Tsy mampino fa dia tampoka teo Toa manonofy aho nefa indrisy fa lasa tokoa Ho any amin'ny mandrakizay? 
+        `
 }];
 var _default = songData;
 exports.default = _default;
@@ -33984,8 +34210,6 @@ exports.Context = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactRouterDom = require("react-router-dom");
-
 var _HitParadeData = _interopRequireDefault(require("./HitParadeData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -33994,115 +34218,79 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-var Context = _react.default.createContext();
+const Context = _react.default.createContext();
 
 exports.Context = Context;
 
 function UseContextProvider(props) {
-  var _useState = (0, _react.useState)([]),
-      _useState2 = _slicedToArray(_useState, 2),
-      allSongs = _useState2[0],
-      setAllSongs = _useState2[1];
-
-  var _useState3 = (0, _react.useState)([]),
-      _useState4 = _slicedToArray(_useState3, 2),
-      cartItems = _useState4[0],
-      setCartItems = _useState4[1];
-
-  var _useState5 = (0, _react.useState)({}),
-      _useState6 = _slicedToArray(_useState5, 2),
-      songLyrics = _useState6[0],
-      setSongLyrics = _useState6[1];
-
-  (0, _react.useEffect)(function () {
+  const [allSongs, setAllSongs] = (0, _react.useState)([]);
+  const [cartItems, setCartItems] = (0, _react.useState)([]);
+  const [songLyrics, setSongLyrics] = (0, _react.useState)({});
+  (0, _react.useEffect)(() => {
     setAllSongs(_HitParadeData.default);
   }, []);
 
   function toggleFavorite(idToToggle) {
-    var newSongsArray = allSongs.map(function (song) {
+    const newSongsArray = allSongs.map(song => {
       if (song.id === idToToggle) {
-        return _objectSpread(_objectSpread({}, song), {}, {
+        return { ...song,
           isFavorited: !song.isFavorited
-        });
+        };
       }
 
-      return _objectSpread({}, song);
+      return { ...song
+      };
     });
     setAllSongs(newSongsArray);
   } // Toggle cart icon
 
 
   function toggleCart(idToToggle) {
-    var newSongsArray = allSongs.map(function (song) {
+    const newSongsArray = allSongs.map(song => {
       if (song.id === idToToggle) {
-        return _objectSpread(_objectSpread({}, song), {}, {
+        return { ...song,
           alreadyBought: !song.alreadyBought
-        });
+        };
       }
 
-      return _objectSpread({}, song);
+      return { ...song
+      };
     });
     setAllSongs(newSongsArray);
   } // increment votes
 
 
-  function incrementVotes(idToIncrement) {
-    var newSongsArray = allSongs.map(function (song) {
+  function incrementUpVotes(idToIncrement) {
+    const newSongsArray = allSongs.map(song => {
       if (song.id === idToIncrement) {
-        return _objectSpread(_objectSpread({}, song), {}, {
+        return { ...song,
           upvotes: song.upvotes + 1
-        });
+        };
       }
 
-      return _objectSpread({}, song);
+      return { ...song
+      };
     });
     setAllSongs(newSongsArray);
   }
 
-  function decrementVotes(idToDecrement) {
-    var newSongsArray = allSongs.map(function (song) {
-      if (song.id === idToDecrement) {
-        return _objectSpread(_objectSpread({}, song), {}, {
+  function incrementDownVotes(idToIncrement) {
+    const newSongsArray = allSongs.map(song => {
+      if (song.id === idToIncrement) {
+        return { ...song,
           downvotes: song.downvotes + 1
-        });
+        };
       }
 
-      return _objectSpread({}, song);
+      return { ...song
+      };
     });
     setAllSongs(newSongsArray);
   } // Add to cart 
 
 
   function addToCart(song) {
-    setCartItems(function (prevItems) {
-      return [].concat(_toConsumableArray(cartItems), [song]);
-    });
+    setCartItems(prevItems => [...cartItems, song]);
   } // Showing the lyrics
   // function showLyrics(song) {
   //     setSongLyrics(song);
@@ -34110,31 +34298,27 @@ function UseContextProvider(props) {
 
 
   function showLyrics(songId) {
-    var songToShowInLyricsPage = allSongs.find(function (song) {
-      return song.id === songId;
-    });
+    const songToShowInLyricsPage = allSongs.find(song => song.id === songId);
     setSongLyrics(songToShowInLyricsPage);
   } // Delete a song
 
 
   function removeSong(songId) {
-    setCartItems(function (prevItems) {
-      return prevItems.filter(function (item) {
-        return item.id !== songId;
-      });
-    });
+    setCartItems(prevItems => prevItems.filter(item => item.id !== songId));
   } // Add a song 
 
 
   function handleForm(e) {
     e.preventDefault();
-    var form = e.target;
-    var title = form.title,
-        artist = form.artist,
-        price = form.price,
-        styles = form.styles,
-        lyrics = form.lyrics;
-    var newSongObj = {
+    const form = e.target;
+    const {
+      title,
+      artist,
+      price,
+      styles,
+      lyrics
+    } = form;
+    const newSongObj = {
       id: Date.now(),
       title: title.value,
       artist: artist.value,
@@ -34146,32 +34330,34 @@ function UseContextProvider(props) {
       lyrics: lyrics.value
     };
     allSongs.push(newSongObj);
-    setAllSongs(_toConsumableArray(allSongs));
+    setAllSongs([...allSongs]);
+    form.reset();
   } // Sort the songs
 
 
-  allSongs.sort(function (songA, songB) {
-    var song1 = songA.upvotes - songB.upvotes;
-    var song2 = songA.downvotes - songB.downvotes;
+  allSongs.sort((songA, songB) => {
+    const song1 = songA.upvotes - songB.upvotes;
+    const song2 = songA.downvotes - songB.downvotes;
     return song2 - song1;
   });
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
     value: {
-      allSongs: allSongs,
-      toggleFavorite: toggleFavorite,
-      incrementVotes: incrementVotes,
-      decrementVotes: decrementVotes,
-      addToCart: addToCart,
-      cartItems: cartItems,
-      removeSong: removeSong,
-      showLyrics: showLyrics,
-      songLyrics: songLyrics,
-      toggleCart: toggleCart,
-      handleForm: handleForm
+      allSongs,
+      toggleFavorite,
+      incrementUpVotes,
+      incrementDownVotes,
+      addToCart,
+      cartItems,
+      setCartItems,
+      removeSong,
+      showLyrics,
+      songLyrics,
+      toggleCart,
+      handleForm
     }
   }, props.children);
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./HitParadeData":"HitParadeData.js"}],"Components/Header.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./HitParadeData":"HitParadeData.js"}],"Components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34259,18 +34445,19 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function SongsComponent(_ref) {
-  var song = _ref.song;
+function SongsComponent({
+  song
+}) {
+  const {
+    toggleFavorite,
+    toggleCart,
+    incrementUpVotes,
+    incrementDownVotes,
+    addToCart,
+    showLyrics
+  } = (0, _react.useContext)(_context.Context);
 
-  var _useContext = (0, _react.useContext)(_context.Context),
-      toggleFavorite = _useContext.toggleFavorite,
-      toggleCart = _useContext.toggleCart,
-      incrementVotes = _useContext.incrementVotes,
-      decrementVotes = _useContext.decrementVotes,
-      addToCart = _useContext.addToCart,
-      showLyrics = _useContext.showLyrics;
-
-  var handleCart = function handleCart(obj, id) {
+  const handleCart = (obj, id) => {
     toggleCart(id);
 
     if (!song.alreadyBought) {
@@ -34278,15 +34465,13 @@ function SongsComponent(_ref) {
     }
   };
 
-  var favoritedIcon = song.isFavorited ? _favorite_fill.default : _favorite_border.default;
-  var cartIconSource = song.alreadyBought ? _cart_filled.default : _cart.default;
+  const favoritedIcon = song.isFavorited ? _favorite_fill.default : _favorite_border.default;
+  const cartIconSource = song.alreadyBought ? _cart_filled.default : _cart.default;
   return /*#__PURE__*/_react.default.createElement("article", {
     className: "songs--container"
   }, /*#__PURE__*/_react.default.createElement("img", {
     className: "heartIcon",
-    onClick: function onClick() {
-      return toggleFavorite(song.id);
-    },
+    onClick: () => toggleFavorite(song.id),
     src: favoritedIcon,
     alt: "heart-icon"
   }), /*#__PURE__*/_react.default.createElement("div", {
@@ -34298,34 +34483,26 @@ function SongsComponent(_ref) {
   }, song.artist)), /*#__PURE__*/_react.default.createElement("div", {
     className: "upvotes-container"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    onClick: function onClick() {
-      return incrementVotes(song.id);
-    },
+    onClick: () => incrementUpVotes(song.id),
     src: _arrow_upward.default,
     alt: "image of up arrow"
   }), /*#__PURE__*/_react.default.createElement("span", null, song.upvotes)), /*#__PURE__*/_react.default.createElement("div", {
     className: "downvotes-container"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    onClick: function onClick() {
-      return decrementVotes(song.id);
-    },
+    onClick: () => incrementDownVotes(song.id),
     src: _arrow_downward.default,
     alt: "image of down arrow"
   }), /*#__PURE__*/_react.default.createElement("span", null, song.downvotes)), /*#__PURE__*/_react.default.createElement("div", {
     className: "add-cart"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    onClick: function onClick() {
-      return handleCart(song, song.id);
-    },
+    onClick: () => handleCart(song, song.id),
     src: cartIconSource,
     alt: "image of a cart"
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "song-lyrics"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    onClick: function onClick() {
-      return showLyrics(song.id);
-    },
-    to: "/song/".concat(song.id)
+    onClick: () => showLyrics(song.id),
+    to: `/song/${song.id}`
   }, "Lyrics")));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../context":"context.js","../images/favorite_border.svg":"images/favorite_border.svg","../images/favorite_fill.svg":"images/favorite_fill.svg","../images/arrow_upward.svg":"images/arrow_upward.svg","../images/arrow_downward.svg":"images/arrow_downward.svg","../images/cart.svg":"images/cart.svg","../images/cart_filled.svg":"images/cart_filled.svg"}],"Pages/Songs.js":[function(require,module,exports) {
@@ -34349,10 +34526,10 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function Songs() {
-  var _useContext = (0, _react.useContext)(_context.Context),
-      allSongs = _useContext.allSongs;
-
-  var songsElement = allSongs.map(function (song) {
+  const {
+    allSongs
+  } = (0, _react.useContext)(_context.Context);
+  const songsElement = allSongs.map(song => {
     return /*#__PURE__*/_react.default.createElement(_SongsComponent.default, {
       key: song.id,
       song: song
@@ -34379,9 +34556,10 @@ var _trash_icon = _interopRequireDefault(require("../images/trash_icon.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function CartItems(_ref) {
-  var song = _ref.song,
-      removeSong = _ref.removeSong;
+function CartItems({
+  song,
+  removeSong
+}) {
   return /*#__PURE__*/_react.default.createElement("article", {
     className: "songs--container"
   }, /*#__PURE__*/_react.default.createElement("img", {
@@ -34419,38 +34597,49 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function Cart() {
-  var _useContext = (0, _react.useContext)(_context.Context),
-      cartItems = _useContext.cartItems,
-      _removeSong = _useContext.removeSong;
+  const {
+    cartItems,
+    setCartItems,
+    removeSong
+  } = (0, _react.useContext)(_context.Context); // Handle the buy button
 
-  var cartItemsElement = cartItems.map(function (item) {
+  const [buyBtnText, setBuyBtnText] = (0, _react.useState)("Buy");
+
+  async function buyPlace() {
+    // Change the text
+    setBuyBtnText('Buying...');
+    setTimeout(() => {
+      setBuyBtnText("Bought");
+    }, 3000); // Empty the cart
+
+    setTimeout(() => {
+      setCartItems([]);
+    }, 4000);
+  }
+
+  const cartItemsElement = cartItems.map(item => {
     return /*#__PURE__*/_react.default.createElement(_CartItems.default, {
       key: item.id,
-      removeSong: function removeSong() {
-        return _removeSong(item.id);
-      },
+      removeSong: () => removeSong(item.id),
       song: item
     });
   }); // Total price
 
-  var totalPrice = 0;
-  var pricesArr = cartItems.map(function (item) {
-    return item.price;
-  });
+  let totalPrice = 0;
+  let pricesArr = cartItems.map(item => item.price);
 
   if (pricesArr.length > 0) {
-    totalPrice = pricesArr.reduce(function (total, price) {
-      return total + price;
-    });
+    totalPrice = pricesArr.reduce((total, price) => total + price);
   }
 
-  var buttonAndTotalEl = pricesArr.length > 0 ? /*#__PURE__*/_react.default.createElement("div", {
+  const buttonAndTotalEl = pricesArr.length > 0 ? /*#__PURE__*/_react.default.createElement("div", {
     className: "order-song"
   }, /*#__PURE__*/_react.default.createElement("button", {
-    className: "order-btn"
-  }, "Buy"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "order-btn",
+    onClick: buyPlace
+  }, buyBtnText, " "), /*#__PURE__*/_react.default.createElement("p", {
     className: "total-price"
-  }, "Total: Ar ", totalPrice)) : "";
+  }, "Total: Ar ", totalPrice)) : /*#__PURE__*/_react.default.createElement("p", null, "You can choose any item now!");
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "cart--container"
   }, cartItemsElement, buttonAndTotalEl);
@@ -34467,8 +34656,9 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function LyricsComponent(_ref) {
-  var song = _ref.song;
+function LyricsComponent({
+  song
+}) {
   return /*#__PURE__*/_react.default.createElement("article", {
     className: "songs-desc"
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", {
@@ -34500,9 +34690,9 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function Lyrics() {
-  var _useContext = (0, _react.useContext)(_context.Context),
-      songLyrics = _useContext.songLyrics;
-
+  const {
+    songLyrics
+  } = (0, _react.useContext)(_context.Context);
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_LyricsComponent.default, {
     song: songLyrics
   }));
@@ -34524,9 +34714,9 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function FormComponent() {
-  var _useContext = (0, _react.useContext)(_context.Context),
-      handleForm = _useContext.handleForm;
-
+  const {
+    handleForm
+  } = (0, _react.useContext)(_context.Context);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "form-container"
   }, /*#__PURE__*/_react.default.createElement("form", {
@@ -34621,10 +34811,11 @@ var _headset = _interopRequireDefault(require("../images/headset.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function StylesComponent(_ref) {
-  var style = _ref.style;
+function StylesComponent({
+  style
+}) {
   return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/styles/".concat(style)
+    to: `/styles/${style}`
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "style--container"
   }, /*#__PURE__*/_react.default.createElement("img", {
@@ -34653,21 +34844,17 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function Styles() {
-  var _useContext = (0, _react.useContext)(_context.Context),
-      allSongs = _useContext.allSongs;
-
-  var stylesArr = allSongs.map(function (song) {
-    return song.style;
-  });
-  var removeDuplicatedStyles = stylesArr.filter(function (data, index) {
+  const {
+    allSongs
+  } = (0, _react.useContext)(_context.Context);
+  const stylesArr = allSongs.map(song => song.style);
+  const removeDuplicatedStyles = stylesArr.filter((data, index) => {
     return stylesArr.indexOf(data) === index;
   });
-  var styleEl = removeDuplicatedStyles.map(function (song) {
-    return /*#__PURE__*/_react.default.createElement(_StylesComponent.default, {
-      key: song,
-      style: song
-    });
-  });
+  const styleEl = removeDuplicatedStyles.map(song => /*#__PURE__*/_react.default.createElement(_StylesComponent.default, {
+    key: song,
+    style: song
+  }));
   return /*#__PURE__*/_react.default.createElement("div", null, styleEl);
 }
 },{"react":"node_modules/react/index.js","../context":"context.js","../Components/StylesComponent":"Components/StylesComponent.js"}],"Components/StyleDetailsComponent.js":[function(require,module,exports) {
@@ -34678,23 +34865,36 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = stylesDetailComponent;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _context = require("../context");
 
-function stylesDetailComponent(_ref) {
-  var song = _ref.song;
+var _reactRouterDom = require("react-router-dom");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function stylesDetailComponent({
+  song
+}) {
+  const {
+    showLyrics
+  } = (0, _react.useContext)(_context.Context);
   return /*#__PURE__*/_react.default.createElement("article", {
     className: "style-desc"
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    onClick: () => showLyrics(song.id),
+    to: `/song/${song.id}`
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "span-container"
   }, /*#__PURE__*/_react.default.createElement("span", {
     className: "artist-name"
   }, song.artist), /*#__PURE__*/_react.default.createElement("span", {
     className: "artist-title"
-  }, song.title)));
+  }, song.title))));
 }
-},{"react":"node_modules/react/index.js"}],"Pages/StylesDetail.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../context":"context.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"Pages/StylesDetail.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34719,16 +34919,14 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function StylesDetail() {
-  var _useParams = (0, _reactRouterDom.useParams)(),
-      styleName = _useParams.styleName;
-
-  var _useContext = (0, _react.useContext)(_context.Context),
-      allSongs = _useContext.allSongs;
-
-  var styles = allSongs.filter(function (song) {
-    return song.style == styleName;
-  });
-  var styleDetailEl = styles.map(function (song) {
+  const {
+    styleName
+  } = (0, _reactRouterDom.useParams)();
+  const {
+    allSongs
+  } = (0, _react.useContext)(_context.Context);
+  const styles = allSongs.filter(song => song.style == styleName);
+  const styleDetailEl = styles.map(song => {
     return /*#__PURE__*/_react.default.createElement(_StyleDetailsComponent.default, {
       key: song.id,
       song: song
@@ -34834,7 +35032,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60587" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49657" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

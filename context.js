@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'; 
 import SongsData from './HitParadeData';
 
 const Context = React.createContext();
@@ -44,7 +43,7 @@ function UseContextProvider(props) {
     }
  
     // increment votes
-    function incrementVotes(idToIncrement) {
+    function incrementUpVotes(idToIncrement) {
         const newSongsArray = allSongs.map(song => {
             if (song.id === idToIncrement) {
                 return {
@@ -58,9 +57,9 @@ function UseContextProvider(props) {
         setAllSongs(newSongsArray);
     }
 
-    function decrementVotes(idToDecrement) {
+    function incrementDownVotes(idToIncrement) {
         const newSongsArray = allSongs.map(song => {
-            if (song.id === idToDecrement) {
+            if (song.id === idToIncrement) {
                 return {
                     ...song,
                     downvotes: song.downvotes + 1,
@@ -111,6 +110,7 @@ function UseContextProvider(props) {
     }
       allSongs.push(newSongObj);
       setAllSongs([...allSongs])
+      form.reset();
 }
 
 // Sort the songs
@@ -120,7 +120,7 @@ allSongs.sort((songA, songB) =>{
    return song2 - song1;
 })
   
-    return <Context.Provider value={{ allSongs, toggleFavorite, incrementVotes, decrementVotes, addToCart, cartItems, removeSong, showLyrics, songLyrics, toggleCart, handleForm}}>
+    return <Context.Provider value={{ allSongs, toggleFavorite, incrementUpVotes, incrementDownVotes, addToCart, cartItems, setCartItems, removeSong, showLyrics, songLyrics, toggleCart, handleForm}}>
         {props.children}
     </Context.Provider>
 }

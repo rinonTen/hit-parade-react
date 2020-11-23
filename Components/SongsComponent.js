@@ -9,7 +9,7 @@ import cart from '../images/cart.svg';
 import cartFilled from '../images/cart_filled.svg';
 
 export default function SongsComponent({ song }) {
-    const { toggleFavorite, toggleCart, incrementVotes, decrementVotes, addToCart, showLyrics } = useContext(Context);
+    const { toggleFavorite, toggleCart, incrementUpVotes, incrementDownVotes, addToCart, showLyrics } = useContext(Context);
 
     const handleCart = (obj, id) => {
         toggleCart(id)
@@ -29,11 +29,11 @@ export default function SongsComponent({ song }) {
                 <p className="artist-name">{song.artist}</p>
             </div>
             <div className="upvotes-container">
-                <img onClick={() => incrementVotes(song.id)} src={arrowUpward} alt="image of up arrow" />
+                <img onClick={() => incrementUpVotes(song.id)} src={arrowUpward} alt="image of up arrow" />
                 <span>{song.upvotes}</span>
             </div>
             <div className="downvotes-container">
-                <img onClick={() => decrementVotes(song.id)} src={arrowDownward} alt="image of down arrow" />
+                <img onClick={() => incrementDownVotes(song.id)} src={arrowDownward} alt="image of down arrow" />
                 <span>{song.downvotes}</span>
             </div>
             <div className="add-cart">
