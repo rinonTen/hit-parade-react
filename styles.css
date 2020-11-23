@@ -15,6 +15,11 @@ header a {
     text-decoration: none;
 }
 
+header a:focus {
+    font-size: 24px; 
+    font-weight: bold; 
+}
+
 .header-nav {
     display: flex;
     justify-content: space-between;
