@@ -6,8 +6,7 @@ const Context = React.createContext();
 function UseContextProvider(props) {
     const [allSongs, setAllSongs] = useState([]);
     const [cartItems, setCartItems] = useState([]);
-    const [songLyrics, setSongLyrics] = useState({});
-
+     
     function getSongs() {
         const lsAllSongs = JSON.parse(localStorage.getItem("allSongs"))
  
@@ -36,7 +35,7 @@ function UseContextProvider(props) {
     useEffect(() => {
         if (cartItems.length > 0) {
             localStorage.setItem("cartItems", JSON.stringify(cartItems))
-        }
+        } 
     }, [cartItems])
 
     useEffect(() => {
@@ -141,7 +140,7 @@ function UseContextProvider(props) {
         return song2 - song1;
     })
 
-    return <Context.Provider value={{ allSongs, toggleFavorite, incrementUpVotes, incrementDownVotes, addToCart, cartItems, setCartItems, removeSong, songLyrics, toggleCart, handleForm }}>
+    return <Context.Provider value={{ allSongs, toggleFavorite, incrementUpVotes, incrementDownVotes, addToCart, cartItems, setCartItems, removeSong, toggleCart, handleForm }}>
         {props.children}
     </Context.Provider>
 }

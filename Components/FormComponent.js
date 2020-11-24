@@ -6,6 +6,7 @@ export default function FormComponent() {
 
     return (
         <div className="form-container">
+            <h2>🌚 Add a new song</h2>
             <form className="add-song-form" onSubmit={handleForm}>
                 <div className="container">
                     <label htmlFor="title">Add a title:</label>

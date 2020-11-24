@@ -1,11 +1,18 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Context } from '../context';
-
+import Styled from 'styled-components';
+const HeaderEl = Styled.header`
+    & h1 {
+        font-size: 72px;
+        line-height: 88px;
+        /* identical to box height */
+        color: #272343;
+    }
+`
 function Header() {
 
     return (
-        <header>
+        <HeaderEl>
             <h1 className="page_title">
                 Hit Parade
             </h1>
@@ -30,9 +37,9 @@ function Header() {
                         🛒 Cart
                     </Link>
                 </li>
-                
+
             </nav>
-        </header>
+        </HeaderEl>
     );
 }
 

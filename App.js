@@ -17,9 +17,6 @@ export default function App() {
 					<Route exact path="/">
 						<Songs />
 					</Route>
-					<Route exact path="/cart">
-						<Cart />
-					</Route>
 					<Route exact path="/song/:songId">
 						<Lyrics />
 					</Route>
@@ -31,6 +28,9 @@ export default function App() {
 					</Route>
 					<Route exact path="/add">
 						<AddSong />
+					</Route>
+					<Route exact path="/cart">
+						<Cart />
 					</Route>
 				</Switch>
 			</main>
